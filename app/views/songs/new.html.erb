@@ -13,7 +13,9 @@
   </datalist>
   <%= f.label :notes %><br>
     <% @song.notes.each do  |id| %>
-      <%= f.collection_check_boxes :genre_ids %>
+      <input name="song[note_ids][]">
+      <input name="song[note_ids][]">
+      <input name="song[note_ids][]">
     <% end %>
   <br />
 
