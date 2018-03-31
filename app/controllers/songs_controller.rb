@@ -1,19 +1,4 @@
 class SongsController < ApplicationController
-  def artist_name=(name)
-    self.artist = Artist.find_or_create_by(name: name)
-  end
-
-  def artist_name
-     self.artist.name
-  end
-
-  def note_ids=(ids)
-    ids.each do |id|
-      note = Note.find(id)
-      self.notes << note
-    end
-  end
-
   def index
     @songs = Song.all
   end
@@ -62,6 +47,6 @@ class SongsController < ApplicationController
   private
 
   def song_params
-    params.require(:song).permit(:title, :artist_name, genre_ids: [], note_ids: [])
+    params.require(:song).permit(:title, :artist_name, :genre_name, note_ids: [])
   end
 end
