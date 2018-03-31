@@ -19,9 +19,9 @@ class Song < ActiveRecord::Base
     self.genre.name
   end
 
-  def note_contents=(ids)
-    ids.each do |id|
-      if note = Note.find(id)
+  def note_contents=(contents)
+    contents.each do |content|
+      if note = Note.find_by(content: content)
         self.notes << note
       end
     end
