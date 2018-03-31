@@ -7,6 +7,13 @@ class SongsController < ApplicationController
      self.artist.name
   end
 
+  def note_ids=(ids)
+    ids.each do |id|
+      note = Note.find(id)
+      self.notes << note
+    end
+  end
+
   def index
     @songs = Song.all
   end
