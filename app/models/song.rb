@@ -8,7 +8,7 @@ class Song < ActiveRecord::Base
   end
 
   def artist_name
-    artist = self.artist.name
+    self.artist.name
   end
 
   def genre_name=(name)
